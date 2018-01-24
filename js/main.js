@@ -1,9 +1,12 @@
 ﻿try {
+    var jsTest = document.getElementById('js-test');
+    jsTest.innerHTML = 'JS works';
+
     new Vue({
-        el: '#app',
+        el: '#vue-test',
         render(h) {
             return h('div', [
-                h('h2', 'Vue app'),
+                h('h3', 'Vue Works'),
                 h('button', 'Button 1'),
                 h('button', 'Button 2'),
                 h('button', {
@@ -15,6 +18,6 @@
         }
     });
 } catch(e) {
-    var div = document.getElementById('error');
-    div.innerHTML += e.message;
+    var error = document.getElementById('error');
+    error.innerHTML = e.message;
 }

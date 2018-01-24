@@ -15,12 +15,6 @@
         }
     });
 } catch(e) {
-    var p1 = document.createElement('h2');
-    p1.innerText = 'Error';
-
-    var p2 = document.createElement('p');
-    p2.innerText = e.message;
-
-    document.body.appendChild(p1);
-    document.body.appendChild(p2);
+    var div = document.getElementById('error');
+    div.innerHTML += e.message;
 }

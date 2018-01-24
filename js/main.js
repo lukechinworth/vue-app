@@ -3,7 +3,7 @@
         el: '#app',
         render(h) {
             return h('div', [
-                h('h1', 'Vue app'),
+                h('h2', 'Vue app'),
                 h('button', 'Button 1'),
                 h('button', 'Button 2'),
                 h('button', {
@@ -15,8 +15,12 @@
         }
     });
 } catch(e) {
-    var p = document.createElement('p');
-    p.innerText = e.message;
+    var p1 = document.createElement('h2');
+    p1.innerText = 'Error';
 
-    document.body.appendChild(p)
+    var p2 = document.createElement('p');
+    p2.innerText = e.message;
+
+    document.body.appendChild(p1);
+    document.body.appendChild(p2);
 }

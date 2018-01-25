@@ -20,6 +20,8 @@
             ]);
         }
     });
+
+    throw new Error('Catch thrown Error test');
 } catch(e) {
     var $error = $('#error');
     $error.html(e.message);

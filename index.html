@@ -24,8 +24,26 @@
     <h2>Vue test</h2>
     <div id="vue-test">Nope</div>
 
+    <!-- error handling -->
     <h2>Errors</h2>
     <ol id="errors"></ol>
+
+    <script>
+        var errors = document.getElementById('errors');
+        var appendError = function(e) {
+            var li = document.createElement('li');
+            li.innerHTML = e.message;
+
+            errors.appendChild(li);
+        };
+
+        // handle uncaught exceptions, e.g. SyntaxError
+        window.onerror = function(e) {
+            appendError({
+                message: e
+            });
+        };
+    </script>
 
     <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="js/vue.min.js" type="text/javascript"></script>

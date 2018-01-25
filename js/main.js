@@ -1,12 +1,3 @@
-var errors = document.getElementById('errors');
-
-var appendError = function(e) {
-    var li = document.createElement('li');
-    li.innerHTML = e.message;
-
-    errors.appendChild(li);
-};
-
 // js test
 try {
     document.getElementById('js-test').innerHTML = 'Yep!';

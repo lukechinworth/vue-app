@@ -18,15 +18,19 @@
     <h2>Javascript test</h2>
     <p id="js-test">Nope</p>
 
-    <h2>Vue test</h2>
-    <div id="vue-test">Nope</div>
-
-    <h2>Error</h2>
+    <h2>Try catch test</h2>
     <p id="error">Nope</p>
 
     <script>
         var jsTest = document.getElementById('js-test');
         jsTest.innerHTML = 'JS Works';
+
+        try {
+            undefined.method();
+        } catch(e) {
+            var error = document.getElementById('error');
+            error.innerHTML = e.message;
+        }
     </script>
 </body>
 </html>

@@ -24,11 +24,19 @@
     <h2>Error</h2>
     <p id="error">Nope</p>
 
-    <!-- main -->
     <script>
+        // error handling
+        var error = document.getElementById('error');
+
+        function handleError(e) {
+            error.innerHTML += e.message;
+        }
+
+        // js test
+        var jsTest = document.getElementById('js-test');
+        jsTest.innerHTML = 'JS Works';
         try {
-            var jsTest = document.getElementById('js-test');
-            jsTest.innerHTML = 'JS works';
+
         /*!
         * Vue.js v2.5.13
         * (c) 2014-2017 Evan You
@@ -54,8 +62,7 @@
 
             throw new Error('Catch thrown Error test');
         } catch(e) {
-            var error = document.getElementById('error');
-            error.innerHTML = e.message;
+            handleError(e);
         }
     </script>
 </body>

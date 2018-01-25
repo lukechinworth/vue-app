@@ -1,4 +1,7 @@
 ﻿try {
+    var $jqueryTest = $('#jquery-test');
+    $jqueryTest.html('jQuery works');
+
     var jsTest = document.getElementById('js-test');
     jsTest.innerHTML = 'JS works';
 
@@ -18,6 +21,6 @@
         }
     });
 } catch(e) {
-    var error = document.getElementById('error');
-    error.innerHTML = e.message;
+    var $error = $('#error');
+    $error.html(e.message);
 }

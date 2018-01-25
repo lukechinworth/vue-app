@@ -1,9 +1,9 @@
 ﻿try {
-    var $jqueryTest = $('#jquery-test');
-    $jqueryTest.html('jQuery works');
-
     var jsTest = document.getElementById('js-test');
     jsTest.innerHTML = 'JS works';
+
+    var $jqueryTest = $('#jquery-test');
+    $jqueryTest.html('jQuery works');
 
     new Vue({
         el: '#vue-test',

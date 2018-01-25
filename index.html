@@ -9,11 +9,14 @@
     <h2>HTML test</h2>
     <p>This is just html.</p>
 
-    <h2>jQuery test</h2>
-    <p id="jquery-test">Nope</p>
+    <h2>Inline script test</h2>
+    <p id="inline-script-test">Nope</p>
 
     <h2>Javascript test</h2>
     <p id="js-test">Nope</p>
+
+    <h2>jQuery test</h2>
+    <p id="jquery-test">Nope</p>
 
     <h2>Vue test</h2>
     <div id="vue-test">Nope</div>
@@ -21,13 +24,13 @@
     <h2>Error</h2>
     <p id="error">None</p>
 
+    <script>
+        var jsTest = document.getElementById('inline-script-test');
+        jsTest.innerHTML = 'Inline script works';
+    </script>
+
     <!-- <script src="js/vue.min.js"></script> -->
     <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
-    <!-- <script src="js/main.js" type="text/javascript"></script> -->
-
-    <script>
-        var jsTest = document.getElementById('js-test');
-        jsTest.innerHTML = 'JS works';
-    </script>
+    <script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>

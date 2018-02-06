@@ -23,3 +23,40 @@ try {
 } catch(e) {
     appendError(e);
 }
+
+// drm test
+try {
+    var LA_URL = 'https://cwip-shaka-proxy.appspot.com/no_auth';
+    var DASH_MANIFEST = 'https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-dash-widevine.ism/.mpd';
+
+
+    shaka.polyfill.installAll();
+
+    if (!shaka.Player.isBrowserSupported()) {
+        throw new Error('shaka unable to polyfill the browser');
+    }
+
+    var video = document.getElementById('drm');
+    var player = new shaka.Player(video);
+
+    player.addEventListener('error', function(event) {
+        appendError(event.detail);
+    });
+
+    // set widevine drm
+    player.configure({
+        drm: {
+            servers: {
+                'com.widevine.alpha': LA_URL
+            }
+        }
+    });
+
+    player.load(DASH_MANIFEST)
+        .then(function() {
+            console.log('The video has now been loaded!');
+        })
+        .catch(appendError);
+} catch(e) {
+    appendError(e);
+}

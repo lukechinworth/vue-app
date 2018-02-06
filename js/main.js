@@ -56,6 +56,7 @@ try {
         .then(function() {
             console.log('The video has now been loaded!');
         })
+        .catch(appendError);
 } catch(e) {
     appendError(e);
 }
